@@ -1,7 +1,7 @@
 from geopy.geocoders import Nominatim
 from geopy.distance import geodesic
 import geocoder as gc
-from colora import green, cyan, red, yellow
+from modules.colora import green, cyan, red, yellow
 import pyfiglet
 import time
 import os
@@ -79,14 +79,8 @@ def geocalc():
         distance = geodesic(source_coordinates, target_coordinates).kilometers
         distance_formatted = "{:.2f}".format(distance)
 
-        location = yellow(location)
-        distance_formatted = cyan(distance_formatted)
-        target = green(target)
+        print(yellow(f'\n{location}') + ' -------------- ' + cyan(f'{distance_formatted}') + ' Km' + ' -------------- ' + yellow(f'{target}\n'))
 
-        os.system("cls" if os.name == "nt" else "clear")
-        print()
-        print(f"{location} -------------- {distance_formatted} Km -------------- {target}")
- 
     except Exception as e:
         os.system("cls" if os.name == "nt" else "clear")
         print(red(f"\nThere was an unexpected error. Try again.\nError: {str(e)}"))
