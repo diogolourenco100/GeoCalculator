@@ -1,0 +1,4 @@
+geopy==2.4.1
+geocoder==1.38.1
+pyfiglet==1.0.2
+colorama==0.4.6
